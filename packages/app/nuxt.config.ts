@@ -173,7 +173,8 @@ export default defineNuxtConfig({
   },
   vite: {
     optimizeDeps: {
-      exclude: ['@sanity/client', 'swiper/vue', 'swiper/modules'],
+      exclude: ['@sanity/client', 'lenis'],
+      include: ['@sanity/image-url'],
     },
   },
   compatibilityDate: '2025-07-15',
