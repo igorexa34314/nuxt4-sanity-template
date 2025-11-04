@@ -1,0 +1,24 @@
+{
+   "editor.formatOnSave": true,
+   "tailwindCSS.experimental.configFile": {
+      "packages/app/.nuxt/tailwind/postcss.mjs": "packages/app/**"
+   },
+   "tailwindCSS.classAttributes": [
+      "class",
+      "className",
+      "class:list",
+      "enter-to-class",
+      "enter-from-class",
+      "leave-to-class",
+      "leave-from-class",
+      "enter-active-class",
+      "leave-active-class"
+   ],
+   "files.associations": {
+      "*.css": "tailwindcss"
+   },
+   "editor.quickSuggestions": {
+      "strings": true
+   },
+   "tailwindCSS.experimental.classRegex": ["tw`(.*?)`", "tw\\('(.*?)'\\)", "tw\\(\\s*('(.*?)'|\"(.*?)\")\\s*\\)"]
+}

@@ -129,6 +129,9 @@ export default defineNuxtConfig({
     viewer: true,
     config: './tailwind.config.ts',
     exposeConfig: false,
+    editorSupport: {
+      autocompleteUtil: true,
+    },
   },
   viewport: {
     breakpoints,
