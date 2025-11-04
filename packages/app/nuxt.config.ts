@@ -78,7 +78,7 @@ export default defineNuxtConfig({
     { path: '~/components', pathPrefix: true },
   ],
   experimental: {
-    viewTransition: true,
+    viewTransition: false,
     typedPages: true,
   },
   imports: {
