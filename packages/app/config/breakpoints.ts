@@ -9,7 +9,7 @@ export const breakpoints = {
   '4xl': 2560,
 };
 
-export const sizes = Object.values(breakpoints).sort;
+export const sizes = Object.values(breakpoints).sort();
 
 // For tailwind config
 export const screens = (
@@ -27,6 +27,6 @@ export const defaultBreakpoints = {
   desktop: 'lg',
   mobile: 'xs',
   tablet: 'md',
-};
+} satisfies Record<string, keyof typeof breakpoints>;
 
-export const fallbackBreakpoint = 'lg';
+export const fallbackBreakpoint = 'lg' satisfies keyof typeof breakpoints;
