@@ -1,12 +1,14 @@
 import Lenis from 'lenis';
 import type { LenisOptions } from 'lenis';
 
-type LenisInstanceId = string | number | symbol;
+export type LenisInstanceId = string | number | symbol;
 
 // Copied from https://github.com/MilkshakeStudio/nuxt-lenis
 export default defineNuxtPlugin({
   name: 'lenis',
   setup() {
+    const nuxtApp = useNuxtApp();
+    const gsap = nuxtApp.$gsap;
     const scrollTrigger = useNuxtApp().$ScrollTrigger;
 
     // Storage for Lenis ticker raf callbacks to unsubscribe
@@ -58,15 +60,21 @@ export default defineNuxtPlugin({
       return lenis;
     };
 
-    const getLenis = (id?: LenisInstanceId) => {
+    const getLenis = (id?: LenisInstanceId, warn?: boolean) => {
       const targetId = id || defaultInstanceId.value;
+      const _warn = warn ?? true;
+
       if (!targetId) {
-        console.warn(`[Lenis] No instances created.`);
+        if (_warn) {
+          console.warn(`[Lenis] No instances created.`);
+        }
         return null;
       } else if (!instances.has(targetId)) {
-        console.warn(
-          `[Lenis] No instance found for ID "${targetId.toString()}".`
-        );
+        if (_warn) {
+          console.warn(
+            `[Lenis] No instance found for ID "${targetId.toString()}".`
+          );
+        }
         return null;
       }
 

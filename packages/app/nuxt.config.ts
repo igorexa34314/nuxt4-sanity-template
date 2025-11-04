@@ -111,7 +111,7 @@ export default defineNuxtConfig({
       scrollTrigger: true,
     },
     clubPlugins: {
-      // scrollSmoother: true, // Replace with Lenis
+      // scrollSmoother: true, // NOTE: use Lenis as a replacement
     },
   },
   sitemap: {
