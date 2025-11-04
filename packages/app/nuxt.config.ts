@@ -176,8 +176,13 @@ export default defineNuxtConfig({
   },
   vite: {
     optimizeDeps: {
-      exclude: ['@sanity/client', 'lenis'],
-      include: ['@sanity/image-url'],
+      exclude: ['lenis'],
+      include: [
+        '@sanity/image-url',
+        'gsap',
+        'gsap/ScrollTrigger',
+        'gsap/ScrollToPlugin',
+      ],
     },
   },
   compatibilityDate: '2025-07-15',
