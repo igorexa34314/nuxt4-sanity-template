@@ -7,28 +7,39 @@ export function useLenis() {
 
 export function useSetupLenisScroller(
   scrollerKey: LenisInstanceId,
-  wrapperRef: MaybeRefOrGetter<HTMLElement | null | undefined>,
-  contentRef: MaybeRefOrGetter<HTMLElement | null | undefined>
+  wrapperRef?: MaybeRefOrGetter<HTMLElement | null | undefined>,
+  contentRef?: MaybeRefOrGetter<HTMLElement | null | undefined>
 ) {
   const lenis = useLenis();
 
-  watch(
-    () => [toValue(contentRef), toValue(wrapperRef)],
-    () => {
-      const wrapperEl = toValue(wrapperRef);
-      const contentEl = toValue(contentRef);
-      if (contentEl && wrapperEl) {
-        setupScroller({
-          wrapper: wrapperEl,
-          content: contentEl,
-        });
+  if (typeof wrapperRef === 'undefined' && typeof contentRef === 'undefined') {
+    tryOnMounted(() => {
+      setupScroller();
+    });
 
-        onWatcherCleanup(() => {
-          destroyScroller();
-        });
+    tryOnScopeDispose(() => {
+      destroyScroller();
+    });
+  } else {
+    watch(
+      () => [toValue(contentRef), toValue(wrapperRef)],
+      () => {
+        const wrapperEl = toValue(wrapperRef);
+        const contentEl = toValue(contentRef);
+
+        if (wrapperEl !== null && contentEl !== null) {
+          setupScroller({
+            wrapper: wrapperEl,
+            content: contentEl,
+          });
+
+          onWatcherCleanup(() => {
+            destroyScroller();
+          });
+        }
       }
-    }
-  );
+    );
+  }
 
   function setupScroller(config: LenisOptions = {}) {
     const defaults: LenisOptions = {

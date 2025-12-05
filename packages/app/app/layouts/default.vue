@@ -1,15 +1,11 @@
 <template>
   <div>
     <h2>Default layout</h2>
-    <div ref="wrapper">
-      <div ref="content">
-        <AppHeader />
-        <main>
-          <slot></slot>
-        </main>
-        <AppFooter />
-      </div>
-    </div>
+    <AppHeader />
+    <main>
+      <slot></slot>
+    </main>
+    <AppFooter />
   </div>
 </template>
 
@@ -18,8 +14,5 @@ defineSlots<{
   default: () => unknown;
 }>();
 
-const contentRef = useTemplateRef('content');
-const wrapperRef = useTemplateRef('wrapper');
-
-useMainScrollerSetup(contentRef, wrapperRef);
+useRootScrollerSetup();
 </script>

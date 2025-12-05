@@ -1,12 +1,9 @@
-const MAIN_SCROLLER_KEY = 'mainScroller';
+const ROOT_SCROLLER_KEY = 'mainScroller';
 
-export function useMainScrollerSetup(
-  wrapperRef: MaybeRefOrGetter<HTMLElement | null | undefined>,
-  contentRef: MaybeRefOrGetter<HTMLElement | null | undefined>
-) {
-  return useSetupLenisScroller(MAIN_SCROLLER_KEY, wrapperRef, contentRef);
+export function useRootScrollerSetup() {
+  return useSetupLenisScroller(ROOT_SCROLLER_KEY);
 }
 
-export function useMainScrollerInstance() {
-  return useLenisScrollerInstance(MAIN_SCROLLER_KEY);
+export function useRootScrollerInstance() {
+  return useLenisScrollerInstance(ROOT_SCROLLER_KEY);
 }
