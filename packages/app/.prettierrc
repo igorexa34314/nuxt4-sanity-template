@@ -8,5 +8,19 @@
   "trailingComma": "es5",
   "bracketSameLine": true,
   "arrowParens": "avoid",
-  "singleAttributePerLine": false
+  "singleAttributePerLine": false,
+  "plugins": ["prettier-plugin-tailwindcss"],
+  "tailwindConfig": "./app/assets/css/main.css",
+  "tailwindAttributes": [
+    "class",
+    "className",
+    "class:list",
+    "enter-to-class",
+    "enter-from-class",
+    "leave-to-class",
+    "leave-from-class",
+    "enter-active-class",
+    "leave-active-class"
+  ],
+  "tailwindFunctions": ["tw", "cn"]
 }
