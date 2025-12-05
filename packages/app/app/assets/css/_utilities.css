@@ -1,2 +1,7 @@
 @layer utilities {
+
+  [dev-mode] {
+    @apply before:fixed before:bottom-0 before:left-0 before:z-9999 before:bg-black before:px-2.5 before:py-[5px] before:font-sans before:text-[12px] before:text-white before:content-['Development\00a0Mode'];
+    @apply after:fixed after:bottom-0 after:right-0 after:z-9999 after:bg-black after:px-2.5 after:py-[5px] after:font-sans after:text-[12px] after:text-white sm:after:content-['sm'] md:after:content-['md'] lg:after:content-['lg'] xl:after:content-['xl'] 2xl:after:content-['2xl'] 3xl:after:content-['3xl'] 4xl:after:content-['4xl'];
+  }
 }

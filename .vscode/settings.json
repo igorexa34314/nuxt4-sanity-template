@@ -1,7 +1,13 @@
 {
    "editor.formatOnSave": true,
+   "files.associations": {
+      "*.css": "tailwindcss"
+   },
+   "editor.quickSuggestions": {
+      "strings": "on"
+   },
    "tailwindCSS.experimental.configFile": {
-      "packages/app/.nuxt/tailwind/postcss.mjs": "packages/app/**"
+      "packages/app/app/assets/css/main.css": "packages/app/app/**"
    },
    "tailwindCSS.classAttributes": [
       "class",
@@ -14,11 +20,6 @@
       "enter-active-class",
       "leave-active-class"
    ],
-   "files.associations": {
-      "*.css": "tailwindcss"
-   },
-   "editor.quickSuggestions": {
-      "strings": true
-   },
-   "tailwindCSS.experimental.classRegex": ["tw`(.*?)`", "tw\\('(.*?)'\\)", "tw\\(\\s*('(.*?)'|\"(.*?)\")\\s*\\)"]
+   "tailwindCSS.classFunctions": ["tw", "cn"],
+   "tailwindCSS.rootFontSize": 16
 }

@@ -1,2 +1,13 @@
 @layer base {
+  * {
+    @apply box-border select-text antialiased;
+  }
+
+  html {
+    @apply text-[13px] md:text-[14px] lg:text-[16px];
+  }
+
+  body {
+    @apply bg-white font-sans font-medium text-black;
+  }
 }
